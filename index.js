@@ -3,7 +3,9 @@ var app = express();
 app.listen(3000, () => {
     console.log("Server running on port 3000");
 });
-
+app.get('/', function (req, res) {
+    res.end("Calculadora");
+});
 app.get("/calcular/:tipo/:marca/:modelo", (req, res, next) => {
     let precio = 0;
     let marcasTier1 = ["audi", "bmw", "mercedes"];
